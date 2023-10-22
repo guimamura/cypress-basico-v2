@@ -11,14 +11,11 @@ describe('Central de Atendimento ao Cliente TAT', function () {
 
     it('preenche os campos obrigatórios e envia o formulário', function () {
         cy.get('#firstName').type('John')
-
         cy.get('#lastName').type('Doe')
-
         cy.get('#email').type('john_doe@test.com')
-
         cy.get('#open-text-area').type('Lorem ipsum')
 
-        cy.get('.button').click()
+        cy.get('button[type="submit"]').click()
 
         cy.get('.success').should('be.visible')
     })
